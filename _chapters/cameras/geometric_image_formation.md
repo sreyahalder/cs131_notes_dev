@@ -135,15 +135,12 @@ $R$ satisfies the following two properties:
 To undo the rotation by $\theta$, we can rotate $(x', y')$ by $\theta$ counterclockwise, or by $-\theta$, as follows, 
 $$\begin{bmatrix}
 x\\
-y
+y\\
 \end{bmatrix}$$ $=$
 $$\begin{bmatrix}
 \cos{(-\theta)} & -\sin{(-\theta)} \\
 \sin{(-\theta)} & \cos{(-\theta)} \\
-\end{array}\right]
-\end{bmatrix}$$
-
-$$\begin{bmatrix}
+\end{bmatrix}$$ $$\begin{bmatrix}
 x'\\
 y'\\
 \end{bmatrix}$$. 
@@ -152,7 +149,8 @@ Notice the matrix being multiplied,
 $$\begin{bmatrix}
 \cos{\theta} & -\sin{\theta} \\
 \sin{\theta} & \cos{\theta} \\
-\end{bmatrix}$$ $=$ $$\begin{bmatrix}
+\end{bmatrix}$$ $=$ 
+$$\begin{bmatrix}
 \cos{\theta} & \sin{\theta} \\
 -\sin{\theta} & \cos{\theta} \\
 \end{bmatrix}$$ $= R^T$
@@ -164,25 +162,25 @@ $$\begin{bmatrix}
 (Add a diagram)
 Translating $(x, y)$ by $t_x, t_y$ is equivalent to element-wise addition $(x + t_x, y + t_y)$.  In order to represent the addition as a matrix operation, we convert to homogeneous coordinates, so we consider $(x, y, 1)$ and $(t_x, t_y, 1)$. The resulting coordinates are $(x + t_x, y + t_y, 1)$, which can be obtained by the following matrix operation:
 
- $\left[\begin{array}{c}
+$$\begin{bmatrix}
 x + t_x \\
 y + t_y \\
 1 \\
-\end{array}\right] = \left[\begin{array}{ccc}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 1 & 0 & t_x \\
 0 & 1 &  t_y \\
 0 & 0 & 1 \\
-\end{array}\right]  \left[\begin{array}{c}
+\end{bmatrix}$$ $$\begin{bmatrix}
 x  \\
 y \\
 1 \\
-\end{array}\right]$.
+\end{bmatrix}$$
 
-$T = \left[\begin{array}{ccc}
+$T = $$\begin{bmatrix}
 1 & 0 & t_x \\
 0 & 1 &  t_y \\
 0 & 0 & 1 \\
-\end{array}\right]$ represents a translation matrix for homogeneous coordinates. 
+\end{bmatrix}$$ represents a translation matrix for homogeneous coordinates. 
 
 ### Transformations Using Homogeneous Coordinates
 As we saw with translations, there are notational benefits to using homogeneous coordinates for 2d transformations. Representing transformations with matrix operations will be useful for compositions since any compositions can be represented by a product of individual matrices. First, we introduce each transformation matrix with homogeneous coordinates and in the next section, we show how these matrices can be combined to generate more complex transformations.
@@ -190,65 +188,65 @@ As we saw with translations, there are notational benefits to using homogeneous 
 #### Translation
 Translating by $t_x, t_y$ along the x and y axes. 
 
-$\left[\begin{array}{c}
+$$\begin{bmatrix}
 x' \\
 y'  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{ccc}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 1 & 0 & t_x \\
 0 & 1 &  t_y \\
 0 & 0 & 1 \\
-\end{array}\right] \left[\begin{array}{c}
+\end{bmatrix}$$ $$\begin{bmatrix}
 x \\
 y  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{c}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 x + t_x \\
 y + t_y \\
 1  \\
-\end{array}\right]$
+\end{bmatrix}$$
 
 #### Scaling 
 Scaling the $x$ coordinate by $a$ and the $y$ coordinate by $b$, i.e., $(x, y) \rightarrow (ax, by)$. 
 
-$\left[\begin{array}{c}
+$$\begin{bmatrix}
 x' \\
 y'  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{ccc}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 a & 0 & 0 \\
 0 & b &  0 \\
 0 & 0 & 1 \\
-\end{array}\right] \left[\begin{array}{c}
+\end{bmatrix}$$ $$\begin{bmatrix}
 x \\
 y  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{c}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 ax \\
 by \\
 1  \\
-\end{array}\right]$
+\end{bmatrix}$$
 
 #### Rotation
 Rotating by $\theta$ around the origin.
 
-$\left[\begin{array}{c}
+$$\begin{bmatrix}
 x' \\
 y'  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{ccc}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 \cos{\theta} & -\sin{\theta} & 0 \\
 \sin{\theta} & \cos{\theta} &  0 \\
 0 & 0 & 1 \\
-\end{array}\right] \left[\begin{array}{c}
+\end{bmatrix}$$ $$\begin{bmatrix}
 x \\
 y  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{c}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 x \cos{\theta} - y \sin{\theta} \\
 x \sin{\theta} + y  \cos{\theta} \\
 1  \\
-\end{array}\right]$
+\end{bmatrix}$$
 
 #### Shearing
 
@@ -256,64 +254,65 @@ Shearing pushes either the $x$ or the $y$ coordinate by $\phi$ along the respect
 
 (Add figure)
 
-$\left[\begin{array}{c}
+$$\begin{bmatrix}
 x' \\
 y'  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{ccc}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 1 & \tan{\phi} & 0 \\
 0 & 1 &  0 \\
 0 & 0 & 1 \\
-\end{array}\right] \left[\begin{array}{c}
+\end{bmatrix}$$ $$\begin{bmatrix}
 x \\
 y  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{c}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 x + y \tan{\phi} \\
 y \\
 1  \\
-\end{array}\right]$
+\end{bmatrix}$$
 
 Shearing in $y$ direction means keeping the same $x$ position and sliding $y$ by $\phi$ in the upward direction, as shown here. 
 
 (Add figure)
 
-$\left[\begin{array}{c}
+$$\begin{bmatrix}
 x' \\
 y'  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{ccc}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 1 & 0 & 0 \\
 \tan{\phi} & 1 &  0 \\
 0 & 0 & 1 \\
-\end{array}\right] \left[\begin{array}{c}
+\end{bmatrix}$$ $$\begin{bmatrix}
 x \\
 y  \\
 1  \\
-\end{array}\right] = \left[\begin{array}{c}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 x \\
 x \tan{\phi} + y \\
 1  \\
-\end{array}\right]$
+\end{bmatrix}$$
 
 ## Compositions of Transformations
 Next, we will be combining different types of 2d transformations to apply different compositions. 
 
 ### Euclidean/Rigid
 The Euclidean, or rigid, transformation is a combination of applying rotation and translation. In matrix form, we can compose $F_{\text{rotation}}$ with $F_{\text{translation}}$ as follows: 
-$F_{\text{rotation}} F_{\text{translation}} =  \left[\begin{array}{ccc}
+
+$F_{\text{rotation}} F_{\text{translation}} =$  $$\begin{bmatrix}
 \cos{\theta} & -\sin{\theta} & 0 \\
 \sin{\theta} & \cos{\theta} & 0  \\
 0 & 0 & 1  \\
-\end{array}\right] \left[\begin{array}{ccc}
+\end{bmatrix}$$ $$\begin{bmatrix}
 1 & 0 & t_x \\
 0 & 1 & t_y  \\
 0 & 0 & 1  \\
-\end{array}\right] = \left[\begin{array}{ccc}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 \cos{\theta} & -\sin{\theta} & t_x \\
 \sin{\theta} & \cos{\theta} & t_y  \\
 0 & 0 & 1  \\
-\end{array}\right]$, which we obtain as the result of matrix product. 
+\end{bmatrix}$$, which we obtain as the result of matrix product. 
 
 This transformation has **three** parameters: the rotation angle $\theta$, the change to $x$ coordinate, $t_x$ and the change to $y$ coordinate, $t_y$. Therefore, this transformation has **three degrees of freedom**.  Euclidean transform preserves the shape of an object (e.g., angles, lengths, parallelism).
 
