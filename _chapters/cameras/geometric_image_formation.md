@@ -275,18 +275,10 @@ y\\
 w
 \end{array}\right]$
 
-\documentclass{article}
-\usepackage{amsmath}
-\begin{document}
-  \begin{align}
-    y &= \begin{bmatrix}
-           x_{1} \\
-           x_{2} \\
-           \vdots \\
-           x_{m}
-         \end{bmatrix}
-  \end{align}
-\end{document}
+$$\begin{bmatrix}1 & x_{1}\\
+1 & x_{2}\\
+1 & x_{3}
+\end{bmatrix}$$
 
 This transformation has **four** parameters: the rotation angle $\theta$, the scaling factor $s$, and $t_x$ and $t_y$ (Note that $a = scos(\theta)$ and $b = ssin(\theta)$). Therefore this transformation also has **four degrees of freedom** (where the number of degrees of freedom is the number of independent quantities necessary to express the values of all the variable properties of a system).
 
