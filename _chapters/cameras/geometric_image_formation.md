@@ -12,8 +12,15 @@ All images are 2D projections of a 3D world. To understand this 3D world around 
 ## Geometric Primitives in 2D and 3D
 
 ### Points
-A 2D point can be represented as $\textbf{x} = (x, y) \in R^2$, but also as a column vector where $\textbf{x} = \left[\begin{array}{cc} x \\ y \\ \end{array}\right]$.
-Similarly, 3D points can be represented as $x=\textbf{x} = (x, y, z) \in R^3$, but also as a column vector where $\textbf{x} = \left[\begin{array}{cc} x \\ y \\ z \\ \end{array}\right]$.
+A 2D point can be represented as $\textbf{x} = (x, y) \in R^2$, but also as a column vector where $\textbf{x} = $ \begin{bmatrix}
+x \\
+y
+\end{bmatrix}.
+Similarly, 3D points can be represented as $x=\textbf{x} = (x, y, z) \in R^3$, but also as a column vector where $\textbf{x} = $ \begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix}.
 We can also represent points in 2D and 3D using homogeneous coordinates, where we append a 1. Thus, a 2D points becomes $(x, y, 1)$ and a 3D point becomes $(x, y, z, 1)$.
 
 ### Everything is easier in Projective Space
@@ -23,7 +30,18 @@ In projective space, it is easier to manipulate homogeneous coordinates. A 2D li
 Using homogeneous coordinates puts us in projective space. 2D projective space can be seen as something between $R^2$ and $R^3$ and can be represented as $P^2 = R^3 - (0, 0, 0)$. In this space, two lines will always meet at a point (which can sometimes be at infinity).
 To go from heterogeneous to homogeneous coordinates, we just append a 1. To go from homogeneous to heterogeneous coordinates, we divide by the third component.
 
-$\left[\begin{array}{cc} x \\ y \\ w \end{array}\right] \rightarrow \left[\begin{array}{cc} x/w \\ y/w \end{array}\right]$
+\begin{bmatrix}
+x \\
+y \\
+w
+\end{bmatrix} 
+
+becomes 
+
+\begin{bmatrix}
+$x/w$ \\
+$y/w$
+\end{bmatrix}.
 
 This is because points that differ only by scale are equivalent in this space, so $\tilde{\textbf{x}} = (\tilde{x}, \tilde{y}, \tilde{z}) = \tilde{w}(x, y, 1) = \tilde{w}\bar{\textbf{x}}$.
 
