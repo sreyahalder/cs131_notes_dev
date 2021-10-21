@@ -96,7 +96,7 @@ s_x & 0 \\
 
 ### Rotation
 Start with a point $p  = (x, y)$ and consider rotating this point by $\theta$ around the origin and let this rotated point be $(x', y')$.
-![alt text](https://docs.google.com/drawings/d/e/2PACX-1vS6WdbkFTTifRVfrQOKQcwE7VqbC5dy0i1qVOH0zZ7N1DjSmLggZa40lumPjA2P3KlIsdcA1ueksy6V/pub?w=960&h=720){width=30%, height=30%}
+![alt text](https://docs.google.com/drawings/d/e/2PACX-1vS6WdbkFTTifRVfrQOKQcwE7VqbC5dy0i1qVOH0zZ7N1DjSmLggZa40lumPjA2P3KlIsdcA1ueksy6V/pub?w=960&h=720){width=30%}
 
 The rotation by $\theta$ can be captured via the rotation matrix $R$ where: 
 
@@ -159,7 +159,8 @@ $$\begin{bmatrix}
  This follows immediately from the first property that the inverse is $R^T$. Rotating by $\theta$ clockwise, then rotating again by $\theta$ counter-clockwise is equivalent to multiplying by $R R^T$ which returns the original coordinates $(x, y)$ and is therefore an identity matrix. Note this property is invariant to the order of operations, so $RR^T = R^TR = I$. 
 
 ### Translation
-(Add a diagram)
+![alt text](https://docs.google.com/drawings/d/e/2PACX-1vQYaBXyPWsMk3gNeN5EXLtak8lzGJRI3rVVQ7oB2knFBR1ZieMGjtgRslMGmyCM12GvOxPi5VbM_ZfO/pub?w=960&h=720){width=30%}
+
 Translating $(x, y)$ by $t_x, t_y$ is equivalent to element-wise addition $(x + t_x, y + t_y)$.  In order to represent the addition as a matrix operation, we convert to homogeneous coordinates, so we consider $(x, y, 1)$ and $(t_x, t_y, 1)$. The resulting coordinates are $(x + t_x, y + t_y, 1)$, which can be obtained by the following matrix operation:
 
 $$\begin{bmatrix}
@@ -252,7 +253,7 @@ x \sin{\theta} + y  \cos{\theta} \\
 
 Shearing pushes either the $x$ or the $y$ coordinate by $\phi$ along the respective axis, so shearing in $x$ direction means keeping the $y$ position the same and sliding $x$ by $\phi$ to the right, as shown in the figure. 
 
-(Add figure)
+![alt text](https://docs.google.com/drawings/d/e/2PACX-1vRPFgtyQesgzGjV3Vq1lNPBP111d9aWwh_7nCqknCMPsoR5ZbmIjgMy4Mfv2v5j_u8iYe-fTcpDUG49/pub?w=960&h=720){width=30%}
 
 $$\begin{bmatrix}
 x' \\
@@ -274,7 +275,7 @@ y \\
 
 Shearing in $y$ direction means keeping the same $x$ position and sliding $y$ by $\phi$ in the upward direction, as shown here. 
 
-(Add figure)
+![alt text](https://docs.google.com/drawings/d/e/2PACX-1vTm-u_cWWRlbdkbwJiR8KPViRLoPrrLwMkM0Vt46U-Rk5IteGcvsymZ4PTv8zMJMOnVQE34J5CWjLdI/pub?w=960&h=720){width=30%}
 
 $$\begin{bmatrix}
 x' \\
