@@ -259,26 +259,21 @@ This transformation has **three** parameters: the rotation angle $\theta$, the c
 ### Similarity
 The similarity transformation is a combination of doing scaling, rotation, and translation. In matrix form, we can obtain the transformed point after a similarity transformation by the following multiplication:
 
-$\left[\begin{array}{ccc}
+$$\begin{bmatrix}
 x'\\
 y'\\
 w'
-\end{array}\right]=
-\left[\begin{array}{ccc}
+\end{bmatrix} = 
+\begin{bmatrix}
 a & -b & t_x\\
 b & a & t_y\\
 0 & 0 & 1
-\end{array}\right]
-\left[\begin{array}{ccc}
+\end{bmatrix}
+\begin{bmatrix}
 x\\
 y\\
 w
-\end{array}\right]$
-
-$$\begin{bmatrix}1 & x_{1}\\
-1 & x_{2}\\
-1 & x_{3}
-\end{bmatrix}$$
+\end{bmatrix} $$
 
 This transformation has **four** parameters: the rotation angle $\theta$, the scaling factor $s$, and $t_x$ and $t_y$ (Note that $a = scos(\theta)$ and $b = ssin(\theta)$). Therefore this transformation also has **four degrees of freedom** (where the number of degrees of freedom is the number of independent quantities necessary to express the values of all the variable properties of a system).
 
