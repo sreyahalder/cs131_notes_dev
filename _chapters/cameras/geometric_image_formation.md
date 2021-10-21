@@ -176,7 +176,7 @@ y \\
 1 \\
 \end{bmatrix}$$
 
-$T = $$\begin{bmatrix}
+$T =$ $$\begin{bmatrix}
 1 & 0 & t_x \\
 0 & 1 &  t_y \\
 0 & 0 & 1 \\
