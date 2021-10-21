@@ -277,7 +277,7 @@ w
 
 \begin{equation}
 \begin{split}
-a = scos(\theta)\\
+a = scos(\theta) \\
 b = ssin(\theta)
 \end{split}
 \end{equation}
