@@ -100,7 +100,7 @@ Start with a point $p  = (x, y)$ and consider rotating this point by $\theta$ ar
 
 The rotation by $\theta$ can be captured via the rotation matrix $R$ where: 
 
-$R =$
+$R = $
 $$\begin{bmatrix} 
 \cos{\theta} & -\sin{\theta} \\
 \sin{\theta} & \cos{\theta} \\
@@ -112,10 +112,12 @@ $x' = r \cos{(\alpha + \theta)}, y' = r \sin{(\alpha + \theta)}$
 Using the sum of two angles trigonometry properties, 
 $x' = r (\cos{\alpha} \cos{\theta} - \sin{\alpha} \sin{\theta}), y' = r(\sin{\alpha}\cos{\theta} + \cos{\alpha} \sin{\theta})$ .
 $x' = \cos{\theta} x - \sin{\theta} y, y' = \cos{\theta} y + \sin{\theta} x$.
+
 $$\begin{bmatrix} 
 x'\\
-y'
+y'\\
 \end{bmatrix}$$ $=$
+
 $$\begin{bmatrix}
 \cos{\theta} & -\sin{\theta} \\
 \sin{\theta} & \cos{\theta} \\
