@@ -275,14 +275,7 @@ y\\
 w
 \end{array}\right]$
 
-\begin{equation}
-\begin{split}
-a = scos(\theta) \\
-b = ssin(\theta)
-\end{split}
-\end{equation}
-
-This transformation has **four** parameters: the rotation angle $\theta$, the scaling factor $s$, and $t_x$ and $t_y$. Therefore this transformation also has **four degrees of freedom** (where the number of degrees of freedom is the number of independent quantities necessary to express the values of all the variable properties of a system).
+This transformation has **four** parameters: the rotation angle $\theta$, the scaling factor $s$, and $t_x$ and $t_y$ (Note that $a = scos(\theta)$ and $b = ssin(\theta)$). Therefore this transformation also has **four degrees of freedom** (where the number of degrees of freedom is the number of independent quantities necessary to express the values of all the variable properties of a system).
 
 Similarity transformations preserve lines, parallelism, and angles.
 
