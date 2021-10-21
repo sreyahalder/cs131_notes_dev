@@ -253,7 +253,7 @@ x \sin{\theta} + y  \cos{\theta} \\
 
 Shearing pushes either the $x$ or the $y$ coordinate by $\phi$ along the respective axis, so shearing in $x$ direction means keeping the $y$ position the same and sliding $x$ by $\phi$ to the right, as shown in the figure. 
 
-![alt text](https://docs.google.com/drawings/d/e/2PACX-1vRPFgtyQesgzGjV3Vq1lNPBP111d9aWwh_7nCqknCMPsoR5ZbmIjgMy4Mfv2v5j_u8iYe-fTcpDUG49/pub?w=960&h=720){width=30%}
+![alt text](https://docs.google.com/drawings/d/e/2PACX-1vQuxklZzfGZdfMS1Swo_VrDRbdSt5xAOL-nJBPFJMNMYVi-w9tKFTaFAGZwM042FOPvAxZvEO4-Fj75/pub?w=480&h=360)
 
 $$\begin{bmatrix}
 x' \\
@@ -275,7 +275,7 @@ y \\
 
 Shearing in $y$ direction means keeping the same $x$ position and sliding $y$ by $\phi$ in the upward direction, as shown here. 
 
-![alt text](https://docs.google.com/drawings/d/e/2PACX-1vTm-u_cWWRlbdkbwJiR8KPViRLoPrrLwMkM0Vt46U-Rk5IteGcvsymZ4PTv8zMJMOnVQE34J5CWjLdI/pub?w=960&h=720){width=30%}
+![alt text](https://docs.google.com/drawings/d/e/2PACX-1vTm-u_cWWRlbdkbwJiR8KPViRLoPrrLwMkM0Vt46U-Rk5IteGcvsymZ4PTv8zMJMOnVQE34J5CWjLdI/pub?w=480&h=360)
 
 $$\begin{bmatrix}
 x' \\
