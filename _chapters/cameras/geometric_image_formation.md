@@ -95,7 +95,7 @@ s_x & 0 \\
 \end{bmatrix}$$
 
 ### Rotation
-Start with a point $p  = (x, y)$ and consider rotating this point by $\theta$ around the origin and let this rotated point be $(x', y')$.
+Start with a point $p  = (x, y)$ and consider rotating $p$ by $\theta$ around the origin and let this rotated point be $(x', y')$.
 ![alt text](https://docs.google.com/drawings/d/e/2PACX-1vS6WdbkFTTifRVfrQOKQcwE7VqbC5dy0i1qVOH0zZ7N1DjSmLggZa40lumPjA2P3KlIsdcA1ueksy6V/pub?w=480&h=360)
 
 The rotation by $\theta$ can be captured via the rotation matrix $R$ where: 
@@ -159,7 +159,7 @@ $$\begin{bmatrix}
  This follows immediately from the first property that the inverse is $R^T$. Rotating by $\theta$ clockwise, then rotating again by $\theta$ counter-clockwise is equivalent to multiplying by $R R^T$ which returns the original coordinates $(x, y)$ and is therefore an identity matrix. Note this property is invariant to the order of operations, so $RR^T = R^TR = I$. 
 
 ### Translation
-![alt text](https://docs.google.com/drawings/d/e/2PACX-1vQYaBXyPWsMk3gNeN5EXLtak8lzGJRI3rVVQ7oB2knFBR1ZieMGjtgRslMGmyCM12GvOxPi5VbM_ZfO/pub?w=960&h=720){width=30%}
+![alt text](https://docs.google.com/drawings/d/e/2PACX-1vQYaBXyPWsMk3gNeN5EXLtak8lzGJRI3rVVQ7oB2knFBR1ZieMGjtgRslMGmyCM12GvOxPi5VbM_ZfO/pub?w=480&h=360)
 
 Translating $(x, y)$ by $t_x, t_y$ is equivalent to element-wise addition $(x + t_x, y + t_y)$.  In order to represent the addition as a matrix operation, we convert to homogeneous coordinates, so we consider $(x, y, 1)$ and $(t_x, t_y, 1)$. The resulting coordinates are $(x + t_x, y + t_y, 1)$, which can be obtained by the following matrix operation:
 
