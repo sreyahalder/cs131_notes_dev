@@ -287,21 +287,21 @@ Sources:
 ### Affine Transformations
 Affine transformations are combinations of linear transformations and translations. In matrix form, we can obtain the transformed point after an affine transformation by the following multiplication:
 
-$\left[\begin{array}{ccc}
+$$\begin{bmatrix}
 x'\\
 y'\\
 w'
-\end{array}\right]=
-\left[\begin{array}{ccc}
+\end{bmatrix} = 
+\begin{bmatrix}
 a & b & c\\
 d & e & f\\
 0 & 0 & 1
-\end{array}\right]
-\left[\begin{array}{ccc}
+\end{bmatrix}
+\begin{bmatrix}
 x\\
 y\\
 w
-\end{array}\right]$
+\end{bmatrix} $$
 
 This transformation has **six** parameters: four ($a, b, d, e$) from the arbitrary linear transformations and $c$ and $f$ from the translations. Therefore this transformation also has **six degrees of freedom**.
 
@@ -310,39 +310,39 @@ Affine transformations preserve lines, parallelism, and ratios, but because of t
 ### Projective Transformations (aka Homography)
 Projective transformations are combinations of affine transformations and projective warps. In matrix form, we can obtain the transformed point after a projective transformation by the following multiplication:
 
-$\left[\begin{array}{ccc}
+$$\begin{bmatrix}
 x'\\
 y'\\
 w'
-\end{array}\right]=
-\left[\begin{array}{ccc}
+\end{bmatrix} = 
+\begin{bmatrix}
 a & b & c\\
 d & e & f\\
 g & h & i
-\end{array}\right]
-\left[\begin{array}{ccc}
+\end{bmatrix}
+\begin{bmatrix}
 x\\
 y\\
 w
-\end{array}\right]$
+\end{bmatrix} $$
 
 Note that for homogenous coordinates, points that differ by a constant nonzero scale factor are equivalent. If we pick $i$ to be the scale factor, we can divide each element by $i$ to get the equivalent equation:
 
-$\left[\begin{array}{ccc}
+$$\begin{bmatrix}
 x'\\
 y'\\
 w'
-\end{array}\right]=
-\left[\begin{array}{ccc}
+\end{bmatrix} = 
+\begin{bmatrix}
 j & k & l\\
 m & n & o\\
 p & q & 1
-\end{array}\right]
-\left[\begin{array}{ccc}
+\end{bmatrix}
+\begin{bmatrix}
 x\\
 y\\
 w
-\end{array}\right]$
+\end{bmatrix} $$
 
 This shows us that although we have **nine** parameters, there are only **eight degrees of freedom**. 
 
