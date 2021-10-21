@@ -100,11 +100,11 @@ Start with a point $p  = (x, y)$ and consider rotating this point by $\theta$ ar
 
 The rotation by $\theta$ can be captured via the rotation matrix $R$ where: 
 
-$R =
+$$R =
 \begin{bmatrix} 
 \cos{\theta} & -\sin{\theta} \\
 \sin{\theta} & \cos{\theta} \\
-\end{bmatrix}$
+\end{bmatrix}$$
 
 We show the derivation as follows:
 $x = r \cos{\alpha}, y = r \sin{\alpha}$
