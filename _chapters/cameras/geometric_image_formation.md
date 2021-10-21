@@ -53,13 +53,14 @@ Similarly, a 3D plane $m$ can be represented where $\tilde{x}^Tm = 0$, or $\text
 ### Lines in 3D
 Lines in 3D are a bit more complicated than planes. We can use two-point parametrization to represent them. Say we have two places at $z = 0, 1$ and two coordinates $\textbf{p} = (x_0, y_0)$ and $\textbf{q} = (x_1, y_1)$, the line going through them is $\textbf{r} = (1 - \lambda)\textbf{p} + \lambda\textbf{q}$. Then $\tilde{\textbf{r}} = \mu\tilde{\textbf{p}} + \lambda\tilde{\textbf{q}}$. This is useful for matters such as light fields.
 
+### Cross Product
 As a reminder, cross products (or vector products) is a vector operation in $\mathbb{R}^3$ denoted by the symbol $\times$. The cross product of two linearly independent vectors is a vector that is perpendicular to both vectors. If the two vectors are linearly dependent or either vector is the zero vector, the cross product is zero. 
 
 The cross product can be evaluated as: 
 
-$$\mathbf{a} \times \mathbf{b} = ||\mathbb{a}|| \, ||\mathbb{b}|| \sin{\theta}$$
+$$\mathbf{a} \times \mathbf{b} = ||\mathbf{a}|| \, ||\mathbf{b}|| \sin{\theta}$$
 
-where $\theta$ is the angle between the two vectors and $|| \, ||$ denotes vector magnitude.
+where $\theta$ is the angle between the two vectors and || || denotes vector magnitude.
 
 # 2D and 3D Transformations
 
@@ -76,20 +77,21 @@ There are many 2D transformations. It is really important to note that all trans
 ### Identity
 The simplest transformation is simply doing nothing: multiplying by the identity matrix. The following is a $2\times 2$ identity matrix:
 
-$ \begin{bmatrix}
+
+\begin{bmatrix}
 1 & 0 \\
-0 & 1 
-\end{bmatrix}  $
+0 & 1
+\end{bmatrix}
 
 ### Scaling
 The next simplest transformation is scaling -- multiplying by the identity matrix where each element is scaled by some constant value. The effect of scaling is simply changing the size of an image. The result of this matrix multiplication is essentially just an element-wise multiplication by a set of constant values. 
 
 Start with a point $p  = (x, y)$ and consider scaling this point by $s_x$ in the x direction and $s_y$ in the y direction. This scaling can be captured by the matrix:
 
-$ \begin{bmatrix}
-s_x & 0 \\
-0 & s_y 
-\end{bmatrix}  $
+\begin{bmatrix}
+$s_x$ & 0 \\
+0 & $s_y$
+\end{bmatrix}
 
 ### Rotation
 Start with a point $p  = (x, y)$ and consider rotating this point by $\theta$ around the origin and let this rotated point be $(x', y')$.
