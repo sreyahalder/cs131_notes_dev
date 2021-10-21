@@ -96,7 +96,7 @@ s_x & 0 \\
 
 ### Rotation
 Start with a point $p  = (x, y)$ and consider rotating this point by $\theta$ around the origin and let this rotated point be $(x', y')$.
-(Add a figure here)
+![alt text](https://docs.google.com/drawings/d/e/2PACX-1vS6WdbkFTTifRVfrQOKQcwE7VqbC5dy0i1qVOH0zZ7N1DjSmLggZa40lumPjA2P3KlIsdcA1ueksy6V/pub?w=960&h=720)
 
 The rotation by $\theta$ can be captured via the rotation matrix $R$ where: 
 
