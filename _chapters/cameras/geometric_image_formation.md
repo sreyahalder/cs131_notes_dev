@@ -276,7 +276,7 @@ y\\
 w
 \end{array}\right]$
 
-$a = scos(\theta)$
+$a = scos(\theta)$\\
 $b = ssin(\theta)$
 
 This transformation has **four** parameters: the rotation angle $\theta$, the scaling factor $s$, and $t_x$ and $t_y$. Therefore this transformation also has **four degrees of freedom** (where the number of degrees of freedom is the number of independent quantities necessary to express the values of all the variable properties of a system).
