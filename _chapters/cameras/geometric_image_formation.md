@@ -112,44 +112,48 @@ $x' = r \cos{(\alpha + \theta)}, y' = r \sin{(\alpha + \theta)}$
 Using the sum of two angles trigonometry properties, 
 $x' = r (\cos{\alpha} \cos{\theta} - \sin{\alpha} \sin{\theta}), y' = r(\sin{\alpha}\cos{\theta} + \cos{\alpha} \sin{\theta})$ .
 $x' = \cos{\theta} x - \sin{\theta} y, y' = \cos{\theta} y + \sin{\theta} x$.
-$\begin{bmatrix} 
+$$\begin{bmatrix} 
 x'\\
 y'
-\end{bmatrix} =
-\begin{bmatrix}
+\end{bmatrix}$$ $=$
+$$\begin{bmatrix}
 \cos{\theta} & -\sin{\theta} \\
 \sin{\theta} & \cos{\theta} \\
-\end{bmatrix}
-\begin{bmatrix}
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
 x\\
 y\\
-\end{bmatrix}$ gives the rotation matrix $R$.
+\end{bmatrix}$$ gives the rotation matrix $R$.
 
 $R$ satisfies the following two properties:
 
  - Inverse is $R$ transpose:
 
 To undo the rotation by $\theta$, we can rotate $(x', y')$ by $\theta$ counterclockwise, or by $-\theta$, as follows, 
-$\begin{bmatrix}
+$$\begin{bmatrix}
 x\\
 y
-\end{bmatrix}=
-\left[\begin{array}{cc}
+\end{bmatrix}$$ $=$
+$$\begin{bmatrix}
 \cos{(-\theta)} & -\sin{(-\theta)} \\
 \sin{(-\theta)} & \cos{(-\theta)} \\
 \end{array}\right]
-\left[\begin{array}{cc}
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
 x'\\
 y'\\
-\end{array}\right]$. 
+\end{bmatrix}$$. 
+
 Notice the matrix being multiplied,
-$\left[\begin{array}{cc}
+$$\begin{bmatrix}
 \cos{\theta} & -\sin{\theta} \\
 \sin{\theta} & \cos{\theta} \\
-\end{array}\right] = \left[\begin{array}{cc}
+\end{bmatrix}$$ $=$ $$\begin{bmatrix}
 \cos{\theta} & \sin{\theta} \\
 -\sin{\theta} & \cos{\theta} \\
-\end{array}\right] = R^T$
+\end{bmatrix}$$ $= R^T$
 
  - Is orthonormal:
  This follows immediately from the first property that the inverse is $R^T$. Rotating by $\theta$ clockwise, then rotating again by $\theta$ counter-clockwise is equivalent to multiplying by $R R^T$ which returns the original coordinates $(x, y)$ and is therefore an identity matrix. Note this property is invariant to the order of operations, so $RR^T = R^TR = I$. 
