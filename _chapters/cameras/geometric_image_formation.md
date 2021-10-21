@@ -259,7 +259,6 @@ This transformation has **three** parameters: the rotation angle $\theta$, the c
 ### Similarity
 The similarity transformation is a combination of doing scaling, rotation, and translation. In matrix form, we can obtain the transformed point after a similarity transformation by the following multiplication:
 
-
 $\left[\begin{array}{ccc}
 x'\\
 y'\\
@@ -275,7 +274,6 @@ x\\
 y\\
 w
 \end{array}\right]$
-
 
 \begin{equation}
 \begin{split}
