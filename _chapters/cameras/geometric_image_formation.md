@@ -100,8 +100,8 @@ Start with a point $p  = (x, y)$ and consider rotating this point by $\theta$ ar
 
 The rotation by $\theta$ can be captured via the rotation matrix $R$ where: 
 
-$$R =
-\begin{bmatrix} 
+$R =$
+$$\begin{bmatrix} 
 \cos{\theta} & -\sin{\theta} \\
 \sin{\theta} & \cos{\theta} \\
 \end{bmatrix}$$
