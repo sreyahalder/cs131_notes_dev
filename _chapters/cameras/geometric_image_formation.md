@@ -12,15 +12,15 @@ All images are 2D projections of a 3D world. To understand this 3D world around 
 ## Geometric Primitives in 2D and 3D
 
 ### Points
-A 2D point can be represented as $\textbf{x} = (x, y) \in R^2$, but also as a column vector where $\textbf{x} = $ \begin{bmatrix}
+A 2D point can be represented as $\textbf{x} = (x, y) \in R^2$, but also as a column vector where $$\textbf{x} =  \begin{bmatrix}
 x \\
 y
-\end{bmatrix}.
-Similarly, 3D points can be represented as $x=\textbf{x} = (x, y, z) \in R^3$, but also as a column vector where $\textbf{x} = $ \begin{bmatrix}
+\end{bmatrix}$$.
+Similarly, 3D points can be represented as $x=\textbf{x} = (x, y, z) \in R^3$, but also as a column vector where $$\textbf{x} = \begin{bmatrix}
 x \\
 y \\
 z
-\end{bmatrix}.
+\end{bmatrix}$$.
 We can also represent points in 2D and 3D using homogeneous coordinates, where we append a 1. Thus, a 2D points becomes $(x, y, 1)$ and a 3D point becomes $(x, y, z, 1)$.
 
 ### Everything is easier in Projective Space
@@ -30,18 +30,18 @@ In projective space, it is easier to manipulate homogeneous coordinates. A 2D li
 Using homogeneous coordinates puts us in projective space. 2D projective space can be seen as something between $R^2$ and $R^3$ and can be represented as $P^2 = R^3 - (0, 0, 0)$. In this space, two lines will always meet at a point (which can sometimes be at infinity).
 To go from heterogeneous to homogeneous coordinates, we just append a 1. To go from homogeneous to heterogeneous coordinates, we divide by the third component.
 
-\begin{bmatrix}
+$$\begin{bmatrix}
 x \\
 y \\
 w
 \end{bmatrix} 
 
-becomes 
+\rightarrow 
 
 \begin{bmatrix}
 $x/w$ \\
 $y/w$
-\end{bmatrix}.
+\end{bmatrix} $$.
 
 This is because points that differ only by scale are equivalent in this space, so $\tilde{\textbf{x}} = (\tilde{x}, \tilde{y}, \tilde{z}) = \tilde{w}(x, y, 1) = \tilde{w}\bar{\textbf{x}}$.
 
@@ -78,20 +78,21 @@ There are many 2D transformations. It is really important to note that all trans
 The simplest transformation is simply doing nothing: multiplying by the identity matrix. The following is a $2\times 2$ identity matrix:
 
 
-\begin{bmatrix}
+$$\begin{bmatrix}
 1 & 0 \\
 0 & 1
 \end{bmatrix}
+$$
 
 ### Scaling
 The next simplest transformation is scaling -- multiplying by the identity matrix where each element is scaled by some constant value. The effect of scaling is simply changing the size of an image. The result of this matrix multiplication is essentially just an element-wise multiplication by a set of constant values. 
 
 Start with a point $p  = (x, y)$ and consider scaling this point by $s_x$ in the x direction and $s_y$ in the y direction. This scaling can be captured by the matrix:
 
-\begin{bmatrix}
-$s_x$ & 0 \\
-0 & $s_y$
-\end{bmatrix}
+$$\begin{bmatrix}
+s_x & 0 \\
+0 & s_y
+\end{bmatrix}$$
 
 ### Rotation
 Start with a point $p  = (x, y)$ and consider rotating this point by $\theta$ around the origin and let this rotated point be $(x', y')$.
