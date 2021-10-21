@@ -277,8 +277,8 @@ w
 
 \begin{equation}
 \begin{split}
-a = s(cos(\theta))\\
-b = s(sin(\theta))
+a = scos(\theta)\\
+b = ssin(\theta)
 \end{split}
 \end{equation}
 
