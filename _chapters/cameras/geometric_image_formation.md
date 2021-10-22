@@ -456,7 +456,7 @@ Here, we call $\begin{bmatrix} RS & t \ 0 & 1 \end{bmatrix}$ the general-purpose
 
 In summary, we can represent all 2D transforms as matrix multiplications, as seen above. Here is a table with more examples of transformations, their associated matrices, and the number of degrees of freedom in $x$ direction means keeping the $y$ position the same and sliding $x$ by $\phi$ to the right, as shown in the figure.
 
-//TODO: Insert figure
+![alt text](https://github.com/sreyahalder/cs131_notes_dev/blob/master/_chapters/cameras/2d_transformations.png)
 
 ## 3D Transformations
 
@@ -464,9 +464,10 @@ In summary, we can represent all 2D transforms as matrix multiplications, as see
 
 3D transformations are extremely similar to 2D transformations, as in they are also represented mainly through matrix multiplications -- but with more degrees of freedom.
 
-//TODO: Insert figure
+![alt text](https://github.com/sreyahalder/cs131_notes_dev/blob/master/_chapters/cameras/3d_transformations.png)
 
-### [](https://github.com/sreyahalder/cs131_notes_dev/blob/master/_chapters/cameras/geometric_image_formation.md#composing-transformations) 3D Rotations: SO(3) representations
+
+### 3D Rotations: SO(3) representations
 
 Rotations in 3D can be represented differently than in 2D and present additional challenges. There are three major ways to represent the space of rotation $SO(3)$:
 
