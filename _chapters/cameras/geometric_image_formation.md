@@ -138,7 +138,7 @@ $R$ satisfies the following two properties:
 
  - Inverse is $R$ transpose:
 
-To undo the rotation by $\theta$, we can rotate $(x', y')$ by $\theta$ counterclockwise, or by $-\theta$, as follows, 
+To undo the rotation by $\theta$, we can rotate $(x', y')$ by $\theta$ clockwise, or by $-\theta$, as follows, 
 $$\begin{bmatrix}
 x\\
 y\\
@@ -162,7 +162,7 @@ $$\begin{bmatrix}
 \end{bmatrix}$$ $= R^T$
 
  - Is orthonormal:
- This follows immediately from the first property that the inverse is $R^T$. Rotating by $\theta$ clockwise, then rotating again by $\theta$ counter-clockwise is equivalent to multiplying by $R R^T$ which returns the original coordinates $(x, y)$ and is therefore an identity matrix. Note this property is invariant to the order of operations, so $RR^T = R^TR = I$. 
+ This follows immediately from the first property that the inverse is $R^T$. Rotating by $\theta$ counter-clockwise, then rotating again by $\theta$ clockwise is equivalent to multiplying by $R R^T$, which returns the original coordinates $(x, y)$, and $R R^T$ is therefore an identity matrix. Note this property holds regardless of the order of operations (i.e., $RR^T = R^TR = I$). 
 
 ### Translation
 ![alt text](https://docs.google.com/drawings/d/e/2PACX-1vQYaBXyPWsMk3gNeN5EXLtak8lzGJRI3rVVQ7oB2knFBR1ZieMGjtgRslMGmyCM12GvOxPi5VbM_ZfO/pub?w=480&h=360)
