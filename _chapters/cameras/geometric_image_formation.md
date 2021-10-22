@@ -9,6 +9,12 @@ order: 17 # Lecture number for 2020
 ## Why Geometric Vision Matters
 All images are 2D projections of a 3D world. To understand this 3D world around us, we can only work from the 2D information we have (images). It's important to be able to make sense of the geometry of this 2D information and extrapolate to 3 dimensions. 
 
+## Brief History of Geometric Vision
+
+This century stands out as THE century for computer vision, with the invention of digital camera, deep learning, 3D reconstructions etc. However, contrary to popular belief, geometric vision and thoughts around its optical geometry have existed long before even computers (or cameras) were invented.
+
+We see examples of panoramic photography emerge in the 1840s, and topographic mapping from perspective drawing as early as the 1700s. We did not even need computers to start working out the mathematical foundations of geometric vision!
+
 ## Geometric Primitives in 2D and 3D
 
 ### Points
@@ -419,3 +425,59 @@ But instead of using three matrices for the transformations, we can multiply the
 $p' = (R_2R_1S)p$.
 
 Note that the order of the matrix multiplication matters. The matrices are in order from right to left--the matrix associated with the first transformation should be the leftmost matrix in the multiplication, and subsequent transformation matrices should be to the right. 
+
+### Example of why order matters in transformations
+
+Let's imagine that we have a point $p$ to which we want to apply two different transformations: scaling and translating.
+
+Let's first look at what happens if we start by scaling and then translating (remembering that we go right to left in matrix multiplication):
+
+$$p'' = TSp =  \begin{bmatrix} 1 & 0 & t_x\ 0 & 1 & t_y\ 0 & 0 & 1 \end{bmatrix}  \begin{bmatrix} s_x & 0 & 0\ 0 & s_y & 0\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} x\ y\ w \end{bmatrix}  =  \begin{bmatrix} s_x & 0 &t_x\ 0 & s_y & t_y\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} x\ y\ 1\end{bmatrix} = \begin{bmatrix} s_x x+t_x\ s_y y+t_y\ 1 \end{bmatrix}$$
+
+Okay... What if I want to translate the point $p$ first and then scale it?
+
+$$p'' = STp =  \begin{bmatrix} s_x & 0 & 0\ 0 & s_y & 0\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} 1 & 0 & t_x\ 0 & 1 & t_y\ 0 & 0 & 1 \end{bmatrix}  \begin{bmatrix} x\ y\ w \end{bmatrix}  =  \begin{bmatrix} s_x & 0 &s_xt_x\ 0 & s_y & s_yt_y\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} x\ y\ w \end{bmatrix} = \begin{bmatrix} s_x x+s_xt_x\ s_y y+s_yt_y\ 1 \end{bmatrix}$$
+
+We see that the resulting matrix after translating then scaling is different than the one we get when we scale then translate. Indeed, when we start by scaling then translating, we also scale up the translating factor ($s_y y+t_y$ becomes $s_y y+s_yt_y$ ).
+
+### Bringing it all together: Scaling, Rotation, Translation
+
+So far, we have talked about scaling, rotating, and translating separately. Let's bring them all together by scaling, rotating, then translating a point $p$.
+
+$$p'' = TRSp =  \begin{bmatrix} 1 & 0 & t_x\ 0 & 1 & t_y\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} cos \theta & - sin \theta & t_x\ sin \theta  & cos \theta  & t_y\ 0 & 0 & 1 \end{bmatrix}  \begin{bmatrix} s_x & 0 & 0\ 0 & s_y & 0\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} x\ y\ 1 \end{bmatrix}  =  \begin{bmatrix} s_x & 0 &0\ 0 & s_y &0\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} x\ y\ w \end{bmatrix}$$ 
+
+Let's define $t =\begin{bmatrix} t_x \ t_y \end{bmatrix}$. We can simplify the above expression into:
+
+$$p' = \begin{bmatrix} R & t \ 0 & 1\end{bmatrix} \begin{bmatrix} S & 0 \ 0 & 1 \end{bmatrix} = \begin{bmatrix} RS & t \ 0 & 1 \end{bmatrix}\begin{bmatrix} x\ y\ 1 \end{bmatrix} $$. 
+
+Here, we call $\begin{bmatrix} RS & t \ 0 & 1 \end{bmatrix}$ the general-purpose transformation matrix.
+
+### Summary: 2D Transforms
+
+In summary, we can represent all 2D transforms as matrix multiplications, as seen above. Here is a table with more examples of transformations, their associated matrices, and the number of degrees of freedom in $x$ direction means keeping the $y$ position the same and sliding $x$ by $\phi$ to the right, as shown in the figure.
+
+//TODO: Insert figure
+
+## 3D Transformations
+
+### 3D Transformations as Matrix multiplications 
+
+3D transformations are extremely similar to 2D transformations, as in they are also represented mainly through matrix multiplications -- but with more degrees of freedom.
+
+//TODO: Insert figure
+
+### [](https://github.com/sreyahalder/cs131_notes_dev/blob/master/_chapters/cameras/geometric_image_formation.md#composing-transformations) 3D Rotations: SO(3) representations
+
+Rotations in 3D can be represented differently than in 2D and present additional challenges. There are three major ways to represent the space of rotation $SO(3)$:
+
+ - Euler angles:
+	 - Rotation around the three canonical axes: yaw, pitch, roll ($\alpha, \beta, \gamma$).
+	 - We then decompose the rotation into three different rotations around those axes ($R(\alpha), R(\beta), R(\gamma)$).
+	 - Not as practical as the next two.
+ - Axis angles:
+	 - Here, we represent the 3D rotation by the axis of rotation $\hat{n}$ (a unit vector) , around which we rotate by an angle $\theta$.
+	 - This can be represented using a single vector $\omega = \theta \hat{n}$.
+	 - This representation has some nice algebraic properties including, and can use the nice Rodrigues formula, here simplified for small angles: $$R(\hat{n},\theta) = I + sin(\theta)[\hat{n}]^2_\times + (1-cos \theta)[\hat{n}]^2_\times \approx I + [\theta\hat{n}]^2_\times$$
+ - Unit quaternions:
+	 - Very common in computer graphics and robots.
+	 - Quaternions are 4-dimensional vectors: $q = (x, y, z, w)$, where $||q|| = 1$.
