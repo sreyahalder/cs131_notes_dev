@@ -321,7 +321,7 @@ $F_{\text{rotation}} F_{\text{translation}} =$  $$\begin{bmatrix}
 0 & 0 & 1  \\
 \end{bmatrix}$$, which we obtain as the result of matrix product. 
 
-This transformation has **three** parameters: the rotation angle $\theta$, the change to $x$ coordinate, $t_x$ and the change to $y$ coordinate, $t_y$. Therefore, this transformation has **three degrees of freedom**.  Euclidean transform preserves the shape of an object (e.g., angles, lengths, parallelism).
+This transformation has **three** parameters: the rotation angle $\theta$, the change to $x$ coordinate, $t_x$, and the change to $y$ coordinate, $t_y$. Therefore, this transformation has **three degrees of freedom** given by $\theta, t_x, t_y$.  Euclidean transform preserves the shape of an object (e.g., angles, lengths, parallelism).
 
 ### Similarity
 The similarity transformation is a combination of doing scaling, rotation, and translation. In matrix form, we can obtain the transformed point after a similarity transformation by the following multiplication:
